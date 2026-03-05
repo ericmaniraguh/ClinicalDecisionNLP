@@ -1,0 +1,33 @@
+# ================================
+# 📊 Data Manipulation
+# ================================
+pandas        # DataFrames and structured data analysis
+numpy         # Numerical computing and array operations
+
+# ================================
+# 📈 Data Visualization
+# ================================
+matplotlib    # Core plotting library
+seaborn       # Statistical data visualization
+wordcloud     # Word cloud generation for text analysis
+
+# ================================
+# 🤖 Machine Learning & NLP
+# ================================
+scikit-learn  # ML algorithms, preprocessing, evaluation metrics
+nltk          # Natural Language Toolkit for text preprocessing
+transformers  # Hugging Face Transformers (BERT, GPT, etc.)
+datasets      # Hugging Face Datasets library
+accelerate    # Hugging Face Accelerate (required for Trainer optimization)
+
+# ================================
+# 🏆 Kaggle Utilities
+# ================================
+kagglehub     # Utility for accessing Kaggle datasets & competitions
+
+# ================================
+# 🔥 Deep Learning (PyTorch)
+# ================================
+torch         # PyTorch core deep learning library
+torchvision   # PyTorch utilities for computer vision
+torchaudio    # PyTorch utilities for audio processing
