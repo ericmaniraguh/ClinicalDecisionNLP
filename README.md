@@ -1,4 +1,5 @@
 
+---
 
 # MedReviewAI: Predicting Independent Medical Review Outcomes
 
@@ -7,8 +8,23 @@
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 ![Build](https://img.shields.io/badge/Build-Passing-brightgreen)
 ![CI](https://github.com/<your-username>/<repo-name>/actions/workflows/ci.yml/badge.svg)
+![Deployed](https://img.shields.io/badge/Deployed-Streamlit-brightgreen)
 
 **Leverage NLP and Machine Learning to Analyze Medical Appeal Text**
+
+---
+
+## 🌐 Deployed Application
+
+Try the live app here: **[MedReviewAI on Streamlit](https://clinicaldecisionnlp.streamlit.app)**
+
+**Features:**
+
+* Input clinical case notes
+* Predict if the initial denial will be **Upheld** or **Overturned**
+* Explore explainable insights with LIME/SHAP
+
+![MedReviewAI UI](./images/ui_demo.png)
 
 ---
 
@@ -22,6 +38,7 @@
 * [Repository Structure](#repository-structure)
 * [Installation & Setup](#installation--setup)
 * [Running the Application](#running-the-application)
+* [Running Tests](#-running-tests)
 * [Potential Applications](#potential-applications)
 * [References](#references)
 * [Contact](#contact)
@@ -32,32 +49,32 @@
 
 In the U.S., an **Independent Medical Review (IMR)** allows patients to challenge denied medical services. Denials are often based on claims that services are **not medically necessary, experimental, or non-urgent**.
 
-**MedReviewAI** is a machine learning pipeline designed to analyze textual **Findings** from IMRs to predict whether a denial will be **Upheld** or **Overturned**. The system provides **Explainable AI (XAI)** insights to help clinical auditors understand the reasoning behind predictions.
+**MedReviewAI** analyzes textual **Findings** from IMRs to predict whether a denial will be **Upheld** or **Overturned**, providing **explainable AI (XAI)** insights for clinical auditors.
 
 ### Key Components
 
-* **Zone 1: Data Input:** Unstructured text (`Findings`) + structured metadata (`Diagnosis`, `Treatment`, `Age`, `Gender`).
-* **Zone 2: Transformation:** Handles clinical negations (e.g., “no fever” → `not_fever`).
-* **Zone 3: Feature Engineering:** Combines ClinicalBERT embeddings for text and one-hot encoded categorical features.
-* **Zone 4: Modeling Engine:** Baseline Random Forest vs. fine-tuned ClinicalBERT transformer.
-* **Zone 5: Insights & Explainability:** Uses LIME/SHAP for interpretable predictions.
+* **Zone 1: Data Input:** Unstructured text (`Findings`) + structured metadata (`Diagnosis`, `Treatment`, `Age`, `Gender`)
+* **Zone 2: Transformation:** Handles clinical negations (e.g., “no fever” → `not_fever`)
+* **Zone 3: Feature Engineering:** Combines ClinicalBERT embeddings with one-hot encoded categorical features
+* **Zone 4: Modeling Engine:** Baseline Random Forest vs. fine-tuned ClinicalBERT transformer
+* **Zone 5: Insights & Explainability:** Uses LIME/SHAP for interpretable predictions
 
 ### Architecture
 
 ![Architecture Diagram](./images/NLPArch_diagram.png)
-*Figure 1: High-level NLP architecture for MedReviewAI.*
+*High-level NLP architecture for MedReviewAI*
 
 ![Detailed Architecture](./images/NLP-Arch-Detailed.png)
-*Figure 2: Detailed architecture showing multi-modal processing pipeline.*
+*Detailed multi-modal processing pipeline*
 
 ---
 
 ## Objectives
 
-* **Text Analysis:** Extract features from clinical notes using NLP (TF-IDF, embeddings, ClinicalBERT).
-* **Predictive Modeling:** Accurately classify `Determination` outcomes (Upheld / Overturned).
-* **Multi-Modal Features:** Combine unstructured text with structured metadata.
-* **Explainability:** Identify key clinical words and patterns influencing overturned decisions.
+* **Text Analysis:** Extract features from clinical notes using NLP (TF-IDF, embeddings, ClinicalBERT)
+* **Predictive Modeling:** Classify `Determination` outcomes (Upheld / Overturned)
+* **Multi-Modal Features:** Combine unstructured text with structured metadata
+* **Explainability:** Identify key clinical words and patterns influencing overturned decisions
 
 ---
 
@@ -77,13 +94,13 @@ In the U.S., an **Independent Medical Review (IMR)** allows patients to challeng
 
 ## Workflow
 
-1. **Data Loading & Exploration** – Inspect dataset, handle missing values, analyze class distribution.
-2. **Exploratory Data Analysis (EDA)** – Visualize trends by diagnosis, treatment, age, gender.
-3. **Text Preprocessing** – Clean text, lemmatize, remove stopwords, handle negations.
-4. **Feature Engineering** – Create multi-modal features: TF-IDF, embeddings, categorical encoding.
-5. **Modeling** – Train baseline models and advanced transformer-based NLP models.
-6. **Evaluation** – Accuracy, F1-score, Precision, Recall, Confusion Matrix, ROC-AUC.
-7. **Explainability** – Use LIME/SHAP to highlight influential clinical terms.
+1. **Data Loading & Exploration** – Inspect dataset, handle missing values, analyze class distribution
+2. **Exploratory Data Analysis (EDA)** – Visualize trends by diagnosis, treatment, age, gender
+3. **Text Preprocessing** – Clean text, lemmatize, remove stopwords, handle negations
+4. **Feature Engineering** – Create multi-modal features: TF-IDF, embeddings, categorical encoding
+5. **Modeling** – Train baseline models and transformer-based NLP models
+6. **Evaluation** – Accuracy, F1-score, Precision, Recall, Confusion Matrix, ROC-AUC
+7. **Explainability** – Use LIME/SHAP to highlight influential clinical terms
 
 ---
 
@@ -115,23 +132,20 @@ MedReviewAI/
 │   └── preprocessing.py
 ├── webapp/
 │   ├── __init__.py
-│   ├── app_api.py       # FastAPI backend
-│   └── app_ui.py        # Streamlit frontend
+│   ├── app_api.py
+│   └── app_ui.py
 ├── medreviewai-predicting-independent-medical-review.ipynb
+├── tests/
 ├── requirements.txt
 └── README.md
 ```
-
-![Project Structure](./images/project_structure.png)
 
 ---
 
 ## Installation & Setup
 
-1. **Create & Activate Virtual Environment**
-
 ```bash
-# Create
+# Create virtual environment
 python -m venv nlp_env
 
 # Activate
@@ -139,18 +153,17 @@ python -m venv nlp_env
 nlp_env\Scripts\activate
 # Linux / macOS
 source nlp_env/bin/activate
-```
 
-2. **Install Dependencies**
-
-```bash
 # Upgrade pip
 python -m pip install --upgrade pip setuptools wheel
 
-# Install packages
+# Install dependencies
 pip install -r requirements.txt
+```
 
-# Optional / additional
+Optional:
+
+```bash
 pip install numpy --only-binary :all: --no-cache-dir
 pip install datasets
 pip install transformers[torch]
@@ -160,37 +173,73 @@ pip install transformers[torch]
 
 ## Running the Application
 
-**Note:** Requires **two terminal windows**.
-
 ### 1️⃣ FastAPI Backend
 
-```powershell
-# Activate environment
+```bash
 .\nlp_env\Scripts\activate
-
-# Start API server
 uvicorn webapp.app_api:app --reload
-# Runs at http://localhost:8000
+# http://localhost:8000
 ```
 
 ### 2️⃣ Streamlit Frontend
 
-```powershell
-# Activate environment in a new terminal
+```bash
 .\nlp_env\Scripts\activate
-
-# Start Streamlit app
 streamlit run webapp\app_ui.py
+# http://localhost:8501
 ```
 
-You can now input clinical cases and get predictions with **explainable insights**.
+---
 
-- Open your browser at: `http://localhost:8501`
+## 🧪 Running Tests
 
+Unit tests use **`unittest`**. Models and vectorizers are **mocked**, so real `.pkl` files aren’t needed.
 
-![MedReviewAI UI](./images/ui_demo.png)
+```bash
+# Activate environment
+# Windows
+nlp_env\Scripts\activate
+# Linux / macOS
+source nlp_env/bin/activate
+
+# Install testing packages
+pip install pytest requests fastapi
+
+# Run tests
+python -m unittest discover -s tests -p "*.py" -v
+```
+
+✅ Example output:
+
+```text
+..
+----------------------------------------------------------------------
+Ran 2 tests in 0.002s
+
+OK
+```
+
+**Notes:**
+
+* Mocked tests **don’t require actual model files**
+* To test with real models, ensure paths in `app_api.py` exist:
+
+```python
+MODEL_PATH = os.path.join("..", "models", "random_forest_model.pkl")
+VECTORIZER_PATH = os.path.join("..", "models", "tfidf_vectorizer.pkl")
+```
+
+* Include the same command in CI/CD workflows:
+
+```yaml
+- name: Run unit tests
+  run: python -m unittest discover -s tests -p "*.py"
+```
 
 ---
+
+
+t f
 
 ## Potential Applications
 
@@ -214,3 +263,4 @@ You can now input clinical cases and get predictions with **explainable insights
 
 * LinkedIn: [linkedin.com/in/ericmaniraguha](https://www.linkedin.com/in/ericmaniraguha)
 
+---
