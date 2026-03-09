@@ -185,7 +185,8 @@ uvicorn webapp.app_api:app --reload
 
 ```bash
 .\nlp_env\Scripts\activate
-streamlit run webapp\app_ui.py
+
+p
 # http://localhost:8501
 ```
 
