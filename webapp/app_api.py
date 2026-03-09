@@ -22,9 +22,9 @@ app.add_middleware(
 )
 
 # Load model and vectorizer
-# Note: Ensure these paths are correct relative to where you run the terminal
-MODEL_PATH = os.path.join("..", "models", "random_forest_model.pkl")
-VECTORIZER_PATH = os.path.join("..", "models", "tfidf_vectorizer.pkl")
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+MODEL_PATH = os.path.join(BASE_DIR, "models", "random_forest_model.pkl")
+VECTORIZER_PATH = os.path.join(BASE_DIR, "models", "tfidf_vectorizer.pkl")
 
 rf_model = joblib.load(MODEL_PATH)
 tfidf_vectorizer = joblib.load(VECTORIZER_PATH)
