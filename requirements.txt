@@ -1,49 +1,51 @@
 # =====================================================
-# DATA MANIPULATION & NUMERICAL COMPUTING
+# CORE DATA & NUMERICAL COMPUTING
 # =====================================================
-pandas        # Work with DataFrames: cleaning, transforming, and analyzing tabular data
-numpy         # Fast numerical computations and array operations (foundation of many ML libraries)
+numpy==1.26.4
+pandas==2.2.2
 
 # =====================================================
 # DATA VISUALIZATION
 # =====================================================
-matplotlib    # Base plotting library for charts (line, bar, scatter, etc.)
-seaborn       # High-level statistical visualization built on top of matplotlib
-wordcloud     # Generate word clouds to visualize frequent terms in text data
+matplotlib==3.8.4
+seaborn==0.13.2
+wordcloud==1.9.3
+altair==4.2.2
 
 # =====================================================
-# MACHINE LEARNING & NATURAL LANGUAGE PROCESSING
+# MACHINE LEARNING & NLP
 # =====================================================
-scikit-learn  # Classical ML: regression, classification, clustering, preprocessing, metrics
-nltk          # Natural Language Processing: tokenization, stopwords, stemming, text preprocessing
-
-# =====================================================
-# TRANSFORMER MODELS (Hugging Face Ecosystem)
-# =====================================================
-transformers  # Pretrained transformer models (BERT, GPT, RoBERTa, etc.)
-datasets      # Efficient dataset loading and processing for ML/NLP tasks
-accelerate    # Hardware optimization for training models on GPU/TPU
+scikit-learn==1.4.2
+nltk==3.9.1
+transformers==4.41.2
+datasets==2.19.1
+accelerate==0.30.1
 
 # =====================================================
 # DEEP LEARNING (PyTorch)
 # =====================================================
-torch         # Core PyTorch deep learning framework for neural networks
-torchvision   # Computer vision utilities, datasets, and pretrained models
-torchaudio    # Audio processing and speech-related deep learning tools
+torch==2.3.0
+torchvision==0.18.0
+torchaudio==2.3.0
 
 # =====================================================
 # MODEL DEPLOYMENT & WEB APPS
 # =====================================================
-fastapi       # High-performance API framework to deploy ML models
-uvicorn       # ASGI server used to run FastAPI applications
-streamlit     # Quick creation of interactive ML and data science web apps
+fastapi==0.111.0
+uvicorn==0.30.1
+streamlit>=1.37.0
 
 # =====================================================
 # MODEL STORAGE & UTILITIES
 # =====================================================
-joblib        # Save and load trained ML models efficiently (especially scikit-learn)
+joblib==1.4.2
 
 # =====================================================
-# DATA SOURCES & COMPETITIONS
+# DATA SOURCES / KAGGLE
 # =====================================================
-kagglehub     # Access Kaggle datasets and competition resources programmatically
+kagglehub==0.2.5
+
+# =====================================================
+# TESTING
+# =====================================================
+pytest
