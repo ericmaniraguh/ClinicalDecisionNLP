@@ -1,33 +1,49 @@
-# ================================
-# 📊 Data Manipulation
-# ================================
-pandas        # DataFrames and structured data analysis
-numpy         # Numerical computing and array operations
+# =====================================================
+# DATA MANIPULATION & NUMERICAL COMPUTING
+# =====================================================
+pandas        # Work with DataFrames: cleaning, transforming, and analyzing tabular data
+numpy         # Fast numerical computations and array operations (foundation of many ML libraries)
 
-# ================================
-# 📈 Data Visualization
-# ================================
-matplotlib    # Core plotting library
-seaborn       # Statistical data visualization
-wordcloud     # Word cloud generation for text analysis
+# =====================================================
+# DATA VISUALIZATION
+# =====================================================
+matplotlib    # Base plotting library for charts (line, bar, scatter, etc.)
+seaborn       # High-level statistical visualization built on top of matplotlib
+wordcloud     # Generate word clouds to visualize frequent terms in text data
 
-# ================================
-# 🤖 Machine Learning & NLP
-# ================================
-scikit-learn  # ML algorithms, preprocessing, evaluation metrics
-nltk          # Natural Language Toolkit for text preprocessing
-transformers  # Hugging Face Transformers (BERT, GPT, etc.)
-datasets      # Hugging Face Datasets library
-accelerate    # Hugging Face Accelerate (required for Trainer optimization)
+# =====================================================
+# MACHINE LEARNING & NATURAL LANGUAGE PROCESSING
+# =====================================================
+scikit-learn  # Classical ML: regression, classification, clustering, preprocessing, metrics
+nltk          # Natural Language Processing: tokenization, stopwords, stemming, text preprocessing
 
-# ================================
-# 🏆 Kaggle Utilities
-# ================================
-kagglehub     # Utility for accessing Kaggle datasets & competitions
+# =====================================================
+# TRANSFORMER MODELS (Hugging Face Ecosystem)
+# =====================================================
+transformers  # Pretrained transformer models (BERT, GPT, RoBERTa, etc.)
+datasets      # Efficient dataset loading and processing for ML/NLP tasks
+accelerate    # Hardware optimization for training models on GPU/TPU
 
-# ================================
-# 🔥 Deep Learning (PyTorch)
-# ================================
-torch         # PyTorch core deep learning library
-torchvision   # PyTorch utilities for computer vision
-torchaudio    # PyTorch utilities for audio processing
+# =====================================================
+# DEEP LEARNING (PyTorch)
+# =====================================================
+torch         # Core PyTorch deep learning framework for neural networks
+torchvision   # Computer vision utilities, datasets, and pretrained models
+torchaudio    # Audio processing and speech-related deep learning tools
+
+# =====================================================
+# MODEL DEPLOYMENT & WEB APPS
+# =====================================================
+fastapi       # High-performance API framework to deploy ML models
+uvicorn       # ASGI server used to run FastAPI applications
+streamlit     # Quick creation of interactive ML and data science web apps
+
+# =====================================================
+# MODEL STORAGE & UTILITIES
+# =====================================================
+joblib        # Save and load trained ML models efficiently (especially scikit-learn)
+
+# =====================================================
+# DATA SOURCES & COMPETITIONS
+# =====================================================
+kagglehub     # Access Kaggle datasets and competition resources programmatically
