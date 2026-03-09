@@ -26,6 +26,7 @@ Try the live app here: **[MedReviewAI on Streamlit](https://clinicaldecisionnlp.
 
 ![MedReviewAI UI](./images/ui_demo.png)
 
+![MedReviewAI UI Deployed - streamlit](./images/streamlit-deployed.png)
 ---
 
 ## Table of Contents
@@ -239,8 +240,6 @@ VECTORIZER_PATH = os.path.join("..", "models", "tfidf_vectorizer.pkl")
 
 ---
 
-
-t f
 
 ## Potential Applications
 
